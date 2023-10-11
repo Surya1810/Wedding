@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\InvitationController;
+use App\Models\Invitation;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Template.Invitation');
 });
+
+Route::get('wedding/invitation/{uniqid}', [InvitationController::class, 'index'])->name('Invitation');
+Route::resource('wedding', InvitationController::class);
