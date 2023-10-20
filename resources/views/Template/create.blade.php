@@ -39,14 +39,14 @@
                 @foreach ($invitation as $invit)
                     <tr>
                         <td>{{ $invit->name }}</td>
-                        <td>
+                        {{-- <td>
                             <a href="{{ route('Invitation', ['name' => $invit->name, 'uniqid' => $invit->uniqid]) }}"
                                 class="btn btn-outline-secondary">See
                                 Invitation</a>
-                        </td>
+                        </td> --}}
                         <td>{{ $invit->status }}</td>
                         <td>{{ $invit->jumlah }}</td>
-                        <td>https://wedding.madebykraf.com/wedding/invitation/{{ $invit->name }}/{{ $invit->uniqid }}
+                        <td>https://wedding.madebykraf.com/wedding/invitation/{{ $invit->name }}/{{ $invit->uniqid }}</td>
                     </tr>
                 @endforeach
             </tbody>
