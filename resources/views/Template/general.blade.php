@@ -6,54 +6,151 @@
 
 @push('css')
     <style>
-        @media (orientation: landscape) {
 
-            /* MAINTANCE PAGE */
-            .maintanance-img {
-                /* The image used */
-                background-image: url("https://ik.imagekit.io/bghiifrbr/DSC02754.jpg?updatedAt=1697707106983");
-
-                /* Full height */
-                height: 100%;
-
-                /* Center and scale the image nicely */
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-        }
-
-        @media (orientation: portrait) {
-
-            /* MAINTANCE PAGE */
-            .maintanance-img {
-                /* The image used */
-                background-image: url("https://ik.imagekit.io/bghiifrbr/DSC02756%20copy.jpg?updatedAt=1697707107018");
-
-                /* Full height */
-                height: 100%;
-
-                /* Center and scale the image nicely */
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-        }
     </style>
 @endpush
 
 @section('content')
-    <div class="maintanance-img">
-        <div class="heroes">
-            <div class="container h-100">
-                <div class="row align-items-center justify-content-center h-100">
-                    <div class="col-12">
-                        <center>
-                            <p class="display-6">The Wedding of</p>
-                            <p class="display-1">Ilham & Riska</p>
-                            <p class="display-6">22 Oktober 2023</p>
-                        </center>
+    <audio id="audio" src="{{ asset('assets/Lagu.mp3') }}"></audio>
+
+    <div class="container-fluid d-flex justify-content-center align-items-center" style="min-height:100vh; overflow:hidden;">
+        <div class="row text-center d-flex align-items-center" style="overflow:hidden;">
+            <div class="col-12">
+                <div class="bg-heroes p-3 text-center text-white">
+                    <p style="font-size: 3vh">The Wedding of</p>
+                    <p class="display-1">Riska & Ilham</p>
+                    <p style="font-size: 3vh">22 Oktober 2023</p>
+                </div>
+                <div class="col-6 mx-auto">
+                    <button class="btn btn-light mt-4" onclick="openInvitation('anchor')">Open Invitation</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="content" class="d-none">
+        <div id="anchor"></div>
+
+        <h1 class="text-center text-white">True Love</h1>
+        <div class="col-12 text-center">
+            <div class="col-6 mx-auto">
+                <img src="https://ik.imagekit.io/bghiifrbr/DSC02472%202.jpg?updatedAt=1697786456814" alt="Pengantin"
+                    width="100%">
+            </div>
+            <p class="text-white" style="font-size: 15x">" Dan Di Antara Tanda-Tanda Kekuasaan-Nya Diciptakan-Nya Untukmu
+                Pasangan Hidup
+                Dari
+                Jenismu Sendiri
+                Supaya Kamu Dapat Ketenangan Hati Dan Dijadikannya Kasih Sayang Di Antara Kamu. Sesungguhnya Yang
+                Demikian Menjadi Tanda-Tanda Kebesaran-Nya Bagi Orang-Orang Yang Berpikir. "</p>
+            <p class="text-white" style="font-size: 15x">- Q.S. Ar-Rum: 21 -</p>
+        </div>
+
+        <div id="married" class="my-3">
+            <h1 class="text-center text-white">We Are Getting Married</h1>
+            <div class="col-12">
+                <img src="https://ik.imagekit.io/bghiifrbr/DSC02732%20copy.jpg?updatedAt=1697785808280" alt="Pengantin"
+                    width="100%">
+            </div>
+        </div>
+
+        <div id="hitung_mundur" class="my-3">
+            <div class="card border-0 bg-heroes mx-auto text-center text-white display-4">
+                <div class="card-header border-0">Count the Date</div>
+                <div class="card-body">
+                    <p class="font-monserrat" style="font-size: 15px">Siang dan malam berganti begitu cepat, diantara saat
+                        saat mendebarkan yang
+                        belum pernah kami rasakan
+                        sebelum nya. kami nantikan kehadiran para keluargadan sahabat, untuk menjadi saksi ikrar janji suci
+                        kami di hari yang bahagia:</p>
+                    <div class="card bg-dark text-white border-0 rounded-4">
+                        <div id="count"></div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lokasi">
+            <div class="col-12 text-center">
+                <img src="https://ik.imagekit.io/bghiifrbr/DSC02747%20copy%20Alamat.jpg?updatedAt=1697800995106"
+                    alt="Pengantin" width="100%">
+                <a href="https://maps.app.goo.gl/zVha68oucwikTmd37" class="btn btn-light mt-3">Cek Lokasi</a>
+            </div>
+        </div>
+
+        <div id="youtube" class="my-3">
+            <div class="col-12">
+                <div class="card border-0 bg-heroes text-center text-white">
+                    <div class="card-header border-0 Text Center display-4">
+                        Love Story
+                    </div>
+                    <div class="card-body">
+                        <iframe width="100%" height="180px"
+                            src="https://www.youtube.com/embed/wHI8DurxbIQ?si=odbS0pIOIVKQMFz0&amp;controls=0"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- 
+        <div id="reservasi">
+            <div class="col-12 my-3">
+                <div class="card border-0 bg-heroes text-white">
+                    <div class="card-header border-0 text-center display-4">
+                        Buku Tamu
+                    </div>
+                    <div class="card-body">
+                        <div class="card bg-dark text-white border-0 rounded-4">
+                            <div class="card-body">
+                                <form action="{{ route('kehadiran', $invitation[0]->id) }}" method="POST"
+                                    enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="mb-3">
+                                        <label for="nama" class="form-label text-left font-monserrat">Nama</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="nama" name="nama"
+                                                aria-describedby="nama" placeholder="Nama Anda" required>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="jumlah" class="form-label text-left font-monserrat">Jumlah
+                                            Tamu</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="jumlah" name="jumlah"
+                                                aria-describedby="jumlah" placeholder="Jumlah Tamu" required>
+                                        </div>
+                                    </div>
+                                    <label class="form-label text-left font-monserrat">Konfirmasi Kehadiran</label><br>
+                                    <div class="form-check text-left font-monserrat">
+                                        <input type="radio" class="form-check-input" id="radio1" name="status"
+                                            value="Tidak Hadir" required>Maaf, Saya Tidak Bisa Hadir
+                                        <label class="form-check-label" for="radio1"></label>
+                                    </div>
+                                    <div class="form-check text-left font-monserrat">
+                                        <input type="radio" class="form-check-input" id="radio2" name="status"
+                                            value="Hadir">Ya, Saya Bersedia Hadir
+                                        <label class="form-check-label" for="radio2"></label>
+                                    </div>
+                                    <button type="submit" class="btn btn-light mt-3">Kirim Konfirmasi</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> --}}
+
+        <div class="container-fluid d-flex justify-content-center align-items-center"
+            style="min-height: 70svh; overflow:hidden;">
+            <div class="row text-center d-flex align-items-center" style="overflow:hidden;">
+                <div id="terima_kasih" class="text-white">
+                    <p class="display-2">Terima Kasih</p>
+                    <p class="font-monserrat">Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila <br>
+                        Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan do’a restu kepada kami.</p>
+                    <p class="font-monserrat mt-5">KAMI YANG BERBAHAGIA</p>
+                    <p class="display-2">Riska & Ilham</p>
                 </div>
             </div>
         </div>
@@ -61,4 +158,45 @@
 @endsection
 
 @push('scripts')
+    <script>
+        function openInvitation(h) {
+            var audio = document.getElementById("audio");
+            var element = document.getElementById("content");
+            var anchor = document.getElementById("anchor").offsetTop;
+
+            element.classList.remove("d-none");
+            audio.play();
+            document.getElementById(h).scrollIntoView();
+        }
+    </script>
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Oct 22, 2023 15:37:25").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            // Output the result in an element with id="demo"
+            document.getElementById("count").innerHTML = days + " hari " + hours + " jam " +
+                minutes + " menit";
+
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("count").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
 @endpush

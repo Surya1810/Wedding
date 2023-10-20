@@ -18,7 +18,7 @@
             <div class="col-12">
                 <div class="bg-heroes p-3 text-center text-white">
                     <p style="font-size: 3vh">The Wedding of</p>
-                    <p class="display-1">Ilham & Riska</p>
+                    <p class="display-1">Riska & Ilham</p>
                     <p style="font-size: 3vh">22 Oktober 2023</p>
                 </div>
                 <div class="col-6 mx-auto">
@@ -38,18 +38,30 @@
     <div id="content" class="d-none">
         <div id="anchor"></div>
 
-        <div id="married my-3">
-            <h1>We Are Getting Merried</h1>
+        <h1 class="text-center text-white">True Love</h1>
+        <div class="col-12 text-center">
+            <div class="col-6 mx-auto">
+                <img src="https://ik.imagekit.io/bghiifrbr/DSC02472%202.jpg?updatedAt=1697786456814" alt="Pengantin"
+                    width="100%">
+            </div>
+            <p class="text-white" style="font-size: 15x">" Dan Di Antara Tanda-Tanda Kekuasaan-Nya Diciptakan-Nya Untukmu
+                Pasangan Hidup
+                Dari
+                Jenismu Sendiri
+                Supaya Kamu Dapat Ketenangan Hati Dan Dijadikannya Kasih Sayang Di Antara Kamu. Sesungguhnya Yang
+                Demikian Menjadi Tanda-Tanda Kebesaran-Nya Bagi Orang-Orang Yang Berpikir. "</p>
+            <p class="text-white" style="font-size: 15x">- Q.S. Ar-Rum: 21 -</p>
+        </div>
+
+        <div id="married" class="my-3">
+            <h1 class="text-center text-white">We Are Getting Married</h1>
             <div class="col-12">
-                <div class="col-6">
-                    <div class="card border-0 bg-heroes text-center text-white">
-                        Ilham
-                    </div>
-                </div>
+                <img src="https://ik.imagekit.io/bghiifrbr/DSC02732%20copy.jpg?updatedAt=1697785808280" alt="Pengantin"
+                    width="100%">
             </div>
         </div>
 
-        <div class="hitung_mundur my-3">
+        <div id="hitung_mundur" class="my-3">
             <div class="card border-0 bg-heroes mx-auto text-center text-white display-4">
                 <div class="card-header border-0">Count the Date</div>
                 <div class="card-body">
@@ -66,10 +78,14 @@
         </div>
 
         <div class="lokasi">
-
+            <div class="col-12 text-center">
+                <img src="https://ik.imagekit.io/bghiifrbr/DSC02747%20copy%20Alamat.jpg?updatedAt=1697800995106"
+                    alt="Pengantin" width="100%">
+                <a href="https://maps.app.goo.gl/zVha68oucwikTmd37" class="btn btn-light mt-3">Cek Lokasi</a>
+            </div>
         </div>
 
-        <div id="youtube my-3">
+        <div id="youtube" class="my-3">
             <div class="col-12">
                 <div class="card border-0 bg-heroes text-center text-white">
                     <div class="card-header border-0 Text Center display-4">
@@ -136,7 +152,7 @@
         <div class="container-fluid d-flex justify-content-center align-items-center"
             style="min-height: 70svh; overflow:hidden;">
             <div class="row text-center d-flex align-items-center" style="overflow:hidden;">
-                <div id="terima_kasih">
+                <div id="terima_kasih" class="text-white">
                     <p class="display-2">Terima Kasih</p>
                     <p class="font-monserrat">Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila <br>
                         Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan do’a restu kepada kami.</p>

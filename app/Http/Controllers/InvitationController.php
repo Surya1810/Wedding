@@ -35,7 +35,7 @@ class InvitationController extends Controller
         Invitation::create([
             'name' => $request->name,
             'uniqid' => Str::random(5),
-            'link' => 'test'
+            'link' => 'https://wedding.madebykraf.com/wedding/invitation/'
         ]);
         return redirect()->back()->with('success', 'Your Invitation Created');
     }
