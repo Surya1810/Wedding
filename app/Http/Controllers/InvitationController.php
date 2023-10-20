@@ -15,7 +15,7 @@ class InvitationController extends Controller
     {
         $invitation = Invitation::where('uniqid', $uniqid)->get();
         // dd($invitation[0]->name);
-        return view('Template.Invitation', compact('invitation'));
+        return view('Template.invitation', compact('invitation'));
     }
 
     /**
