@@ -15,6 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('uniqid');
             $table->string('name');
+            $table->string('status')->nullable();
+            $table->string('jumlah')->nullable();
+            $table->string('nama')->nullable();
+            $table->string('link')->nullable();
             $table->timestamps();
         });
     }

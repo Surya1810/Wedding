@@ -16,8 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('Template.Invitation');
+    return view('Template.general');
 });
 
-Route::get('wedding/invitation/{uniqid}', [InvitationController::class, 'index'])->name('Invitation');
+Route::get('wedding/invitation/{name}/{uniqid}', [InvitationController::class, 'index'])->name('Invitation');
+Route::post('wedding/kehadiran/{id}', [InvitationController::class, 'status_kehadiran'])->name('kehadiran');
 Route::resource('wedding', InvitationController::class);

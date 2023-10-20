@@ -5,6 +5,11 @@
 @endsection
 
 @push('css')
+    <style>
+        * {
+            font-family: "Monsterrat", sans-serif !important;
+        }
+    </style>
 @endpush
 
 @section('content')
@@ -24,17 +29,25 @@
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Link</th>
+                    {{-- <th>Link</th> --}}
+                    <th>Status</th>
+                    <th>Jumlah Tamu</th>
+                    <th>Share</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($invitation as $invit)
                     <tr>
                         <td>{{ $invit->name }}</td>
-                        <td>
-                            <a href="{{ route('Invitation', $invit->uniqid) }}" class="btn btn-outline-secondary">See
+                        {{-- <td>
+                            <a href="{{ route('Invitation', ['name' => $invit->name, 'uniqid' => $invit->uniqid]) }}"
+                                class="btn btn-outline-secondary">See
                                 Invitation</a>
-                        </td>
+                        </td> --}}
+                        <td>{{ $invit->status }}</td>
+                        <td>{{ $invit->jumlah }}</td>
+                        <td><button class="btn btn-dark" onclick="copy()">Copy Link</button></td>
+                        <input type="hidden" value="{{ $invit->link }}" id="link">
                     </tr>
                 @endforeach
             </tbody>
@@ -43,4 +56,19 @@
 @endsection
 
 @push('scripts')
+    <script>
+        document.getElementById("link").value = window.location.hostname + "/";
+
+        function copy() {
+            // Get the text field
+            var copyText = document.getElementById("link");
+
+            // Select the text field
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // For mobile devices
+            var domain = window.location.hostname
+            // Copy the text inside the text field
+            navigator.clipboard.writeText(.copyText.value);
+        }
+    </script>
 @endpush

@@ -11,10 +11,11 @@ class InvitationController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index($uniqid)
+    public function index($name, $uniqid)
     {
-        $name = Invitation::where('uniqid', $uniqid)->get();
-        return view('Template.Invitation', compact('name'));
+        $invitation = Invitation::where('uniqid', $uniqid)->get();
+        // dd($invitation[0]->name);
+        return view('Template.Invitation', compact('invitation'));
     }
 
     /**
@@ -33,9 +34,10 @@ class InvitationController extends Controller
     {
         Invitation::create([
             'name' => $request->name,
-            'uniqid' => Str::random(5)
+            'uniqid' => Str::random(5),
+            'link' => 'test'
         ]);
-        return redirect()->back()->with('success', 'Your Invitation Created');;
+        return redirect()->back()->with('success', 'Your Invitation Created');
     }
 
     /**
@@ -68,5 +70,29 @@ class InvitationController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function status_kehadiran(Request $request, $id)
+    {
+        // dd($id);
+        if ($request->status == 'Hadir') {
+            $status_kehadiran = Invitation::find($id);
+            $status_kehadiran->status = $request->status;
+            $status_kehadiran->nama = $request->nama;
+            $status_kehadiran->jumlah = $request->jumlah;
+            $status_kehadiran->save();
+        } elseif ($request->status == 'Tidak Hadir') {
+            $status_kehadiran = Invitation::find($id);
+            $status_kehadiran->status = $request->status;
+            $status_kehadiran->nama = $request->nama;
+            $status_kehadiran->jumlah = $request->jumlah;
+            $status_kehadiran->save();
+        } else {
+            $status_kehadiran = Invitation::find($id);
+            $status_kehadiran->status = 'None';
+            $status_kehadiran->save();
+        }
+
+        return redirect()->back()->with('success', 'Your Invitation Created');;
     }
 }
